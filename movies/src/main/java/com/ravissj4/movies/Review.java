@@ -14,6 +14,12 @@ import lombok.NoArgsConstructor;
 @Data
 public class Review {
     @Id
-    private ObjectId id;
+    private ObjectId id; // ids are auto-generated -> cannot pass id to create a Review object -> need to have a constructor that only takes body
+
     private String body;
+
+    public Review(String body) {
+        this.body = body;
+    }
+    
 }
